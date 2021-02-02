@@ -1,0 +1,89 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: red;
+}
+
+#content{
+    position: fixed;
+    margin-top: 0px;
+    padding-top: 0px;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    height: 400px;
+    width: 300px;
+}
+
+form{
+    position: relative;
+    left: 50px;
+    top: 50px;
+}
+
+button{
+    margin: 20px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 40px;
+    border: 0px;
+    background-color: rgb(0, 119, 255);
+    font-size: 16px;
+    color: white;
+    width: 200px;
+}
+
+button:focus{
+    border: none;
+    outline: none;
+}
+
+button:hover{
+    border-radius: 5px;
+    height: 40px;
+    border: 0px;
+    background-color:rgba(0, 119, 255, 0.315);
+}
+
+input[type="text"]{
+    border: solid 2px;
+    border-color: #000000;
+    background-color: unset;
+    height: 20px;
+    width: 200px;
+}
+
+
+textarea{
+    border: solid 2px;
+    border-color: #000000;
+    background-color: unset;
+    height: 100px;
+    width: 200px;
+}
+
+input[type="text"]:focus{
+    transition: border-color 0.5s;
+    outline: 0;
+    border-color: red;
+}
+
+/*
+关闭按钮
+ */
+#close{
+    display: block;
+    height: 20px;
+    width: 20px;
+    float: right;
+    background-color: #fc3c3c;
+    color: white;
+    text-align: center;
+}
+
+#close:hover{
+    background-color: #fc3c3c;
+    color: black;
+}
+

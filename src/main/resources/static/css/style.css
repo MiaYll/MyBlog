@@ -1,0 +1,255 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-image: url('../images/bg.jpg');
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+}
+
+#header{
+    z-index: 10;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(248, 248, 248);
+    margin: auto;
+    opacity: 100%;
+}
+
+
+
+#logo{
+    float: left;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+#signin{
+    float: right;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+/*
+个人介绍 
+*/
+
+#info{
+    position: relative;
+    top: 100px;
+    margin: auto;
+    width: 60%;
+    height: 100px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+
+.profile{
+    float: left;
+}
+
+.profile #name{
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+.profile #sign{
+    margin: 3px;
+    padding: 0;
+    font-size: 15px;
+    margin-left: 20px;
+    color: #888888;
+}
+
+/* 
+圆形头像
+*/
+
+#info img{
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+/* 
+个人信息右边图标
+*/
+
+.button{
+    position: relative;
+    top: 30px;
+    margin-right: 20px;
+    float: right;
+}
+
+.button span{
+    margin-left: 20px;
+    color:rgb(18, 179, 243);
+}
+
+.button span:hover{
+    transform: rotateY(360deg);
+    transition: transform 1s;
+    cursor: pointer;
+}
+
+/* 
+登录注册
+*/
+#signin a{
+    outline: none;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 20px;
+    color: black;
+}
+
+/* 
+文章区
+*/
+
+#words{
+    position: relative;
+    margin: auto;
+    width: 60%;
+    margin-top: 150px;
+}
+
+/*
+默认样式
+ */
+.word{
+    position: relative;
+    display: block;
+    margin-bottom: 100px;
+    border-radius: 30px;
+    opacity: 0.9;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/* 
+背景图片
+*/
+.backimage{
+    border-radius: 30px 30px 0px 0px;
+    background-repeat: repeat;
+    background-size: 100%;
+    background-position: center center;
+    display: block;
+    width: 100%;
+    height: 40%;
+}
+
+/* 
+简要内容
+*/
+.title{
+    font-weight: bold;
+    font-size: 20px;
+    height: 10%;
+    width: 80%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    margin: 0;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.content{
+    height: 40%;
+    width: 95%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    font-size: 15px;
+    color: #888888;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.data{
+    position: relative;
+    height: 10%;
+    float: right;
+    color: rgba(70, 70, 70, 0.644);
+    font-weight: bold;
+    bottom: 15px;
+    margin-right: 20px;
+}
+
+.word:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+/* 
+脚部分
+*/
+
+#footer{
+    position: relative;
+    width: 60%;
+    clear:both;
+    margin: auto;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+}
+
+
+
+/* 
+发送按钮
+*/
+
+#send{
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    bottom: 50px;
+    border-radius: 50%;
+    background-color: dodgerblue;
+    right: 50px;
+}
+
+#send span{
+    font-size: 50px;
+    color: white;
+    margin-top: 21px;
+    margin-left: 21px;
+}
+
+#send:hover{
+    transform: scale(1.05);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+/*
+发送页面
+*/
+
+#sendWord{
+    display: none;
+    position: fixed;
+    left:50%;
+    top:50%;
+    z-index: 10;
+    transform:translate(-50%,-50%);
+}
+
+iframe{
+    border: 2px solid black;
+}

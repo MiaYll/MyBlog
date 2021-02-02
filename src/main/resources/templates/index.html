@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>MiaYLL's Blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+</head>
+<body>
+
+
+<div id="header">
+    <div id="logo">
+        Blog
+    </div>
+    <div id="signin" th:utext="${signin}">
+
+    </div>
+</div>
+<div id="info">
+    <img src="images/head.jpg">
+    <div class="profile">
+        <p id="name">MiaYll</p>
+        <p id="sign">咸鱼一条</p>
+    </div>
+    <div class="button">
+        <span class="fa fa-github fa-3x"></span>
+        <span class="fa fa-qq fa-3x"></span>
+        <span class="fa fa-envelope-open-o fa-3x"></span>
+    </div>
+</div>
+
+<div id="sendWord">
+    <iframe src="send" scrolling="no" width="300px" height="400px" frameborder=0></iframe>
+</div>
+
+<div id="words" th:utext="${words}">
+</div>
+<div id="send" th:utext="${send}">
+
+</div>
+<div id="footer">
+    Copyright 2020 by MiaYll
+</div>
+<script>
+    $("#send").click(
+        function(){
+            if($("#unLogin").length === 0){
+                $("#sendWord").fadeToggle();
+                return;
+            }
+            window.location.href="/login";
+        }
+    );
+</script>
+</body>
+</html>

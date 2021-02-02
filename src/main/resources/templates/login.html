@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div id='loginpanel'>
+        <a href="../"><span id="back"><p>返回主页</p></span></a>
+        <div id='content'>
+            <form>
+                <h2>登录</h2>
+                <p class="input">
+                    <input type="text" placeholder="用户名" id="name">
+                </p>
+                <p class="input">
+                    <input type="password" placeholder="密码" id="password">
+                </p>
+                <p class='button'>
+                    <button type="button" title="点击登录">登录</button>
+                </p>
+                <p id='tip'>
+                    <a href="./reg">没有账号?点击注册!</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(".button").click(
+            function (){
+                let name = $("#name").val();
+                let password = $("#password").val();
+                if(name === "" || password === ""){
+                    alert("还有内容没填!");
+                    return;
+                }
+                $.post("/userLogin",{
+                        name: name,
+                        password: password
+                    },function (data){
+                        let json = eval(data);
+                        if(json.success === true){
+                            parent.window.location.href="/";
+                        }else{
+                            alert(json.message);
+                        }
+
+                    }
+                );
+            }
+
+        );
+    </script>
+</body>
+</html>

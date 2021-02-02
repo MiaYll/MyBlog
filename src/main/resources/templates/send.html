@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/send.css">
+    <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="content">
+    <span id="close" class="fa fa-times"></span>
+    <form>
+        <p>
+            <input placeholder="标题" type="text" name="title" id="title">
+        </p>
+        <p>
+                <textarea placeholder="内容" maxlength="10000" name="content" style="resize:none;" id="text">
+                </textarea>
+        </p>
+        <p>
+            <input type="file" id="file">
+        </p>
+        <button id="send" type="button">点击发布</button>
+    </form>
+</div>
+
+<script>
+
+    $("#text").ready(
+        function (){
+            $("#text").val("");
+        }
+    );
+
+    $("#close").click(
+        function (){
+            window.parent.window.$("#sendWord").fadeOut();
+        }
+    );
+
+    $("#file").change(
+        function (){
+            let file = $("#file")[0].files[0];
+            if(file.length === 0) {
+                return;
+            }
+            let type = file.type.toLowerCase();
+            if(type !== "image/jpeg" && type !== "image/png" && type !== "image/gif"){
+                $(this).val(null);
+                alert("这不是图片吧!")
+                return;
+            }
+            if(file.size > 1024 * 1024 * 5){
+                $(this).val(null);
+                alert("图片超过5M了!")
+                return;
+            }
+        }
+    );
+
+    $("#send").click(
+      function (){
+          let title = $("#title").val();
+          let content = $("#text").val();
+          let file = $("#file")[0].files[0];
+          if(title === "" || content === ""){
+              alert("还有内容没填!");
+              return;
+          }
+          let formData = new FormData();
+          formData.append("title",title);
+          formData.append("content",content);
+          formData.append("image",file);
+          $.ajax({
+              url: "/sendword",
+              type: "POST",
+              data: formData,
+              processData: false,
+              contentType: false,
+              success: function(res){
+                  alert("发布成功");
+                  parent.window.location.href="/";
+              },
+              error: function(res){
+                  alert("发布失败");
+              }
+          })
+      }
+
+    );
+</script>
+</body>
+</html>
