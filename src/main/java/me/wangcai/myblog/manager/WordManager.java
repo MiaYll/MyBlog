@@ -1,4 +1,4 @@
-package me.wangcai.myblog.Manager;
+package me.wangcai.myblog.manager;
 
 import me.wangcai.myblog.model.WordBean;
 import me.wangcai.myblog.utils.DataBaseUtil;

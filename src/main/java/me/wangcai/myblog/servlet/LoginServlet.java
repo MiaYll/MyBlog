@@ -1,7 +1,7 @@
 package me.wangcai.myblog.servlet;
 
 import com.google.gson.Gson;
-import me.wangcai.myblog.Manager.UserManager;
+import me.wangcai.myblog.manager.UserManager;
 import me.wangcai.myblog.model.Response;
 import me.wangcai.myblog.model.UserBean;
 

@@ -1,7 +1,6 @@
 package me.wangcai.myblog.controller;
 
-import me.wangcai.myblog.Manager.WordManager;
-import me.wangcai.myblog.config.FileConfig;
+import me.wangcai.myblog.manager.WordManager;
 import me.wangcai.myblog.model.UserBean;
 import me.wangcai.myblog.model.WordBean;
 import me.wangcai.myblog.utils.ColorUtil;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
 
 @Controller
 public class HomePageController {
